@@ -12,12 +12,13 @@ def get_duration(entered_at, leaved_at):
     return leaved_at - entered_at
 
 
-def format_duration(td):
-    td = str(td)
-    time = datetime.strptime(td, '%H:%M:%S')
-    return f'{time:%H:%M:%S}'
+def format_duration(time):
+    time = str(time)
+    format_time = datetime.strptime(time, '%H:%M:%S')
+    return f'{format_time:%H:%M:%S}'
 
 
 def is_visit_long(time):
-    if int(time.total_seconds()) > 3600:
-        return True
+    hour = 3600
+    return int(time.total_seconds()) > hour
+

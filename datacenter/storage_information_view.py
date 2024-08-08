@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from datacenter.models import Visit
 from django.utils import timezone
-from moduls import get_duration
-from moduls import convert_to_moscow_time
-from moduls import format_duration
+from datacenter.modules import get_duration
+from datacenter.modules import convert_to_moscow_time
+from datacenter.modules import format_duration
 
 
 def storage_information_view(request):
