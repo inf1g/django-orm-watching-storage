@@ -2,9 +2,9 @@ from datetime import datetime
 from django.utils import timezone
 
 
-def convert_to_moscow_time(dt):
+def convert_to_moscow_time(time):
     moscow_tz = timezone.pytz.timezone('Europe/Moscow')
-    moscow_time = dt.astimezone(moscow_tz).replace(microsecond=0)
+    moscow_time = time.astimezone(moscow_tz).replace(microsecond=0)
     return moscow_time
 
 
@@ -19,6 +19,6 @@ def format_duration(time):
 
 
 def is_visit_long(time):
-    hour = 3600
-    return int(time.total_seconds()) > hour
+    suspicious_visit_in_seconds = 3600
+    return int(time.total_seconds()) > suspicious_visit_in_seconds
 
