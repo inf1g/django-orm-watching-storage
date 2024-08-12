@@ -4,4 +4,6 @@
 .idea
 .env
 /.env
-
+.replit
+poetry.lock
+pyproject.toml

@@ -26,6 +26,7 @@ USER=
 PASSWORD=
 SECRET_KEY=
 DEBUG=False
+ALLOWED_HOSTS=
 ```
 
 ### Запуск:

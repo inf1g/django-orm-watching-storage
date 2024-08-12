@@ -4,35 +4,28 @@ from environs import Env
 
 env = Env()
 env.read_env()
-HOST = env.str("HOST")
-PORT = env.int("PORT")
-NAME = env.str("NAME")
-USER = env.str("USER")
-PASSWORD = env.str("PASSWORD")
-SECRET_KEY = env.str("SECRET_KEY")
-DEBUG_SWITCH = env.bool('DEBUG', 'False')
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': HOST,
-        'PORT': PORT,
-        'NAME': NAME,
-        'USER': USER,
-        'PASSWORD': PASSWORD
+        'HOST': env("HOST"),
+        'PORT': env("PORT"),
+        'NAME': env("NAME"),
+        'USER': env("USER"),
+        'PASSWORD': env("PASSWORD")
     }
 }
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = SECRET_KEY
+SECRET_KEY = env("SECRET_KEY")
 
-DEBUG = DEBUG_SWITCH
+DEBUG = env.bool('DEBUG', 'False')
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
