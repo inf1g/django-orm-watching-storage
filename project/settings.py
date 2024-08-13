@@ -8,7 +8,6 @@ env.read_env()
 
 DATABASE_URL = env.str("DATABASE_URL")
 
-# Настройка подключений к БД
 DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL, engine='django.db.backends.postgresql_psycopg2')
 }
