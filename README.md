@@ -19,14 +19,10 @@ pip install -r requirements.txt
 ```
 5. Создайте файл `.env` с переменными как на примере ниже и укажите значения для этих переменных:
 ```bash
-HOST=
-PORT=
-NAME=
-USER=
-PASSWORD=
-SECRET_KEY=
-DEBUG=False
+DB_SECRET_KEY=
+DEBUG=True
 ALLOWED_HOSTS=
+DATABASE_URL=postgres://myuser:mypassword@localhost:5432/mydatabase
 ```
 
 ### Запуск:
